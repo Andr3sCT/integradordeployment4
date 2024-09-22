@@ -16,7 +16,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/")
+    @GetMapping
     public ResponseEntity<List<UserDto>> findAll(){
         List<UserDto> lista = this.userService.getAll();
         return ResponseEntity.ok(lista);
@@ -28,7 +28,7 @@ public class UserController {
         return ResponseEntity.ok(usuario);
     }
 
-    @PostMapping("/")
+    @PostMapping
     public ResponseEntity<UserDto> save(@RequestBody UserDto userDto){
         UserDto saved = this.userService.save(userDto);
         return ResponseEntity.ok(saved);
